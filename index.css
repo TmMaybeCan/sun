@@ -1,0 +1,65 @@
+.first {
+    width: 150px;
+    height: 150px;
+    background-color: orange;
+    margin: 90px auto;
+    transform: skewY(0deg);
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    transition-property: background-color;
+    transition-duration: 1s;
+    box-shadow: 1px 1px 2px 2px #f1f1f1,
+                -1px -1px 2px 2px #f1f1f1,
+                1px -1px 2px 2px #f1f1f1,
+                -1px 1px 2px 2px #f1f1f1;
+  }
+  
+  .first:hover {
+    background-color: crimson;
+  }
+  body{
+    background-color: teal;
+  }
+  
+  .first:hover > .second {
+    border-radius: 20px;
+    color: lighten(orange, 10);
+    background-image: linear-gradient(to left, orange, crimson);
+    cursor: pointer;
+  }
+  .second {
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, orange, crimson);
+    width: 120px;
+    position: absolute;
+    left: 10%;
+    top: 43%;
+    transition-property: border-radius;
+    transition-duration: 500ms;
+  }
+  .second::before,
+  .second::after {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    transition-property: transform, opacity;
+    transition-duration: 150ms, 400ms;
+  }
+  .second::before {
+    left: 0;
+  }
+  .second::after {
+    right: 0;
+  }
+  .first:hover .second::before {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  .first:hover .second::after {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  
